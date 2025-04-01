@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Модульные плагины</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Модульные плагины расширений</h1>
+    </div>
+    
+    <div class="content">
+        <p>Расширяйте функциональность редактора с помощью системы плагинов.</p>
+        
+        <h2>Установка плагинов</h2>
+        <ol>
+            <li>Откройте <strong>Плагины → Магазин плагинов</strong></li>
+            <li>Найдите нужный плагин через поиск</li>
+            <li>Нажмите "Установить"</li>
+            <li>Перезагрузите редактор при необходимости</li>
+        </ol>
+        
+        <img src="../images/plugins.png" alt="Менеджер плагинов">
+        
+        <h2>Популярные плагины</h2>
+        <table>
+            <tr>
+                <th>Плагин</th>
+                <th>Описание</th>
+            </tr>
+            <tr>
+                <td>Code Metrics</td>
+                <td>Анализ сложности кода</td>
+            </tr>
+            <tr>
+                <td>Remote Development</td>
+                <td>Работа с удаленными серверами</td>
+            </tr>
+            <tr>
+                <td>AI Assistant</td>
+                <td>ИИ-помощник для программирования</td>
+            </tr>
+        </table>
+        
+        <h2>Создание своих плагинов</h2>
+        <p>Используйте наш API для разработки:</p>
+        <pre><code>class MyPlugin extends PishiPlugin {
+  constructor() {
+    super("My Cool Plugin");
+  }
+  
+  onActivate() {
+    console.log("Plugin activated!");
+  }
+}</code></pre>
+    </div>
+    
+    <div class="footer">
+        <p><a href="cleanmode.html">← Назад</a> | <a href="liveexec.html">Далее: Живое выполнение →</a></p>
+    </div>
+</body>
+</html>

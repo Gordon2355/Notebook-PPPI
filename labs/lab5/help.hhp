@@ -1,0 +1,40 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=help.chm
+Default topic=index.html
+Display compile progress=Yes
+Index file=C:\Users\mgros\Desktop\dsds\lab 5\toc.hhk
+Language=0x419 Русский (Россия)
+Title=РџРёС€Рё-Р§РёС‚Р°Р№ 9000 - Р”РѕРєСѓРјРµРЅС‚Р°С†РёСЏ
+
+
+[FILES]
+index.html
+intro.html
+quickstart.html
+faq.html
+hotkeys.html
+modules\syntax.html
+modules\autocomplete.html
+modules\linting.html
+modules\vcs.html
+modules\themes.html
+modules\cleanmode.html
+modules\plugins.html
+modules\liveexec.html
+modules\markdown.html
+modules\encryption.html
+
+[ALIAS]
+IDH_MAIN=index.html
+IDH_INTRO=intro.html
+IDH_QUICKSTART=quickstart.html
+IDH_SYNTAX=modules/syntax.html
+IDH_AUTOCOMPLETE=modules/autocomplete.html
+IDH_LINTING=modules/linting.html
+
+[MAP]
+#include <myhelp.hm>
+
+[INFOTYPES]
+
