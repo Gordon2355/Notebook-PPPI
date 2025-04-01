@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<book>
+    <title>Пиши-Читай 9000: Руководство разработчика</title>
+    <chapter>
+        <title>Обзор проекта</title>
+        <para>Проект "Пиши-Читай 9000" — это интеллектуальный текстовый редактор с функциями подсветки кода и управления темами.</para>
+    </chapter>
+    <chapter>
+        <title>Модуль SyntaxHighlighter</title>
+        <para>Класс для подсветки синтаксиса кода.</para>
+        <section>
+            <title>Методы</title>
+            <para><emphasis>highlight</emphasis>: Выполняет подсветку кода для указанного языка.</para>
+            <para><emphasis>set_language</emphasis>: Устанавливает язык программирования.</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Модуль ThemeManager</title>
+        <para>Класс для управления темами оформления.</para>
+        <section>
+            <title>Методы</title>
+            <para><emphasis>set_theme</emphasis>: Устанавливает тему интерфейса.</para>
+            <para><emphasis>get_theme</emphasis>: Возвращает текущую тему.</para>
+        </section>
+    </chapter>
+</book>
