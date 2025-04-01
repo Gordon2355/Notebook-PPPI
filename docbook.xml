@@ -1,28 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
-<book>
-    <title>Пиши-Читай 9000: Руководство разработчика</title>
-    <chapter>
-        <title>Обзор проекта</title>
-        <para>Проект "Пиши-Читай 9000" — это интеллектуальный текстовый редактор с функциями подсветки кода и управления темами.</para>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0">
+    <title>Пиши-Читай 9000: Руководство программиста</title>
+
+    <chapter xml:id="chapter_1">
+        <title>Введение в Пиши-Читай 9000</title>
+        <para>Проект "Пиши-Читай 9000" — это не просто блокнот, это ваш личный помощник в мире кода и текста, который знает, что вы хотите написать, ещё до того, как вы это поняли сами.</para>
+        <para>Приложение поддерживает динамическую подсветку синтаксиса, автодополнение, линтинг, интеграцию с системами контроля версий, темы оформления, режим "Чистого кода", модульные плагины, "Живое выполнение", сохранение состояния, поддержку Markdown и LaTeX, шифрование данных, мультиплатформенность, мультиязычность, геймификацию и интеграцию с популярными IDE.</para>
+        <para>Этот инструмент идеально подходит для разработчиков, которые хотят повысить производительность, сохраняя при этом удобство и безопасность работы с кодом.</para>
+        <para>В данном руководстве описаны основные модули приложения, их функциональность и примеры использования.</para>
+        <para>Мы также предоставляем примеры кода и сценарии, чтобы вы могли быстро начать использовать "Пиши-Читай 9000" в своих проектах.</para>
     </chapter>
-    <chapter>
-        <title>Модуль SyntaxHighlighter</title>
-        <para>Класс для подсветки синтаксиса кода.</para>
+
+    <chapter xml:id="chapter_2">
+        <title>Модули приложения</title>
         <section>
-            <title>Методы</title>
-            <para><emphasis>highlight</emphasis>: Выполняет подсветку кода для указанного языка.</para>
-            <para><emphasis>set_language</emphasis>: Устанавливает язык программирования.</para>
+            <title>Подсветка синтаксиса</title>
+            <para>Модуль подсветки синтаксиса позволяет выделять код в зависимости от выбранного языка программирования.</para>
+            <programlisting language="python"><![CDATA[
+class SyntaxHighlighter:
+    """Класс для обработки подсветки синтаксиса для различных языков программирования.
+
+    Args:
+        language (str): Язык программирования, для которого выполняется подсветка синтаксиса.
+    """
+    def __init__(self, language):
+        self.language = language
+
+    def highlight(self, code):
+        """Имитирует подсветку синтаксиса для переданного кода.
+
+        Args:
+            code (str): Фрагмент кода для подсветки.
+
+        Returns:
+            str: Строка с подсвеченным кодом и префиксом языка.
+        """
+        return f"Highlighted {self.language} code: {code}"
+
+    def set_language(self, language):
+        """Устанавливает язык для подсветки синтаксиса.
+
+        Args:
+            language (str): Новый язык для подсветки.
+
+        Returns:
+            str: Сообщение, подтверждающее установку нового языка.
+        """
+        self.language = language
+        return f"Language set to {language}"
+            ]]></programlisting>
+        </section>
+
+        <section>
+            <title>Темы оформления</title>
+            <para>Модуль управления темами позволяет переключать оформление интерфейса.</para>
+            <programlisting language="python"><![CDATA[
+class ThemeManager:
+    """Класс для управления темами оформления пользовательского интерфейса.
+
+    Attributes:
+        theme (str): Текущая тема, по умолчанию 'light'.
+    """
+    def __init__(self):
+        self.theme = "light"
+
+    def set_theme(self, theme):
+        """Устанавливает тему оформления для приложения.
+
+        Args:
+            theme (str): Название темы для применения (например, 'light', 'dark').
+
+        Returns:
+            str: Сообщение, подтверждающее установку новой темы.
+        """
+        self.theme = theme
+        return f"Theme set to {theme}"
+
+    def get_theme(self):
+        """Получает текущую тему оформления.
+
+        Returns:
+            str: Строка, указывающая текущую тему.
+        """
+        return f"Current theme: {self.theme}"
+            ]]></programlisting>
+        </section>
+
+        <section>
+            <title>Автодополнение</title>
+            <para>Модуль автодополнения предоставляет автоматическое завершение кода на основе языка программирования, с учетом контекста и структуры проекта.</para>
+        </section>
+
+        <section>
+            <title>Линтинг и статический анализ</title>
+            <para>Модуль линтинга автоматически проверяет код на наличие ошибок и предлагает рекомендации по улучшению.</para>
+        </section>
+
+        <section>
+            <title>Интеграция с системами контроля версий</title>
+            <para>Модуль интеграции с Git и другими системами позволяет визуализировать историю изменений и управлять коммитами прямо из приложения.</para>
+        </section>
+
+        <section>
+            <title>Режим "Чистого кода"</title>
+            <para>Режим "Чистого кода" предоставляет интерфейс без отвлекающих элементов, оптимизированный для работы на устройствах с маленьким экраном.</para>
+        </section>
+
+        <section>
+            <title>Модульные плагины</title>
+            <para>Поддержка установки плагинов для добавления новых языков, функций или инструментов, с API для сторонних разработчиков.</para>
+        </section>
+
+        <section>
+            <title>Живое выполнение</title>
+            <para>Модуль "Живого выполнения" позволяет запускать и проверять код прямо в блокноте, с поддержкой встроенных терминалов.</para>
+        </section>
+
+        <section>
+            <title>Сохранение состояния</title>
+            <para>Автоматическое сохранение и резервное копирование данных в локальном и облачном режимах.</para>
+        </section>
+
+        <section>
+            <title>Поддержка Markdown и LaTeX</title>
+            <para>Форматирование текстов с использованием Markdown и поддержка формул через LaTeX с визуализацией в реальном времени.</para>
+        </section>
+
+        <section>
+            <title>Шифрование данных</title>
+            <para>Обеспечение безопасности данных через шифрование файлов и поддержку авторизации пользователей.</para>
+        </section>
+
+        <section>
+            <title>Мультиплатформенность</title>
+            <para>Работа на Windows, macOS, Linux и оптимизация для мобильных устройств.</para>
+        </section>
+
+        <section>
+            <title>Мультиязычность</title>
+            <para>Интерфейс и документация на нескольких языках, с возможностью автоматического перевода текста.</para>
+        </section>
+
+        <section>
+            <title>Геймификация</title>
+            <para>Поощрения за выполнение задач, таких как написание кода без ошибок, для повышения мотивации.</para>
+        </section>
+
+        <section>
+            <title>Интеграция с IDE</title>
+            <para>Экспорт проектов в Visual Studio Code, JetBrains, NetBeans и другие IDE.</para>
         </section>
     </chapter>
-    <chapter>
-        <title>Модуль ThemeManager</title>
-        <para>Класс для управления темами оформления.</para>
+
+    <chapter xml:id="chapter_3">
+        <title>Сценарии использования</title>
         <section>
-            <title>Методы</title>
-            <para><emphasis>set_theme</emphasis>: Устанавливает тему интерфейса.</para>
-            <para><emphasis>get_theme</emphasis>: Возвращает текущую тему.</para>
+            <title>Сценарий 1: Подсветка кода на Python</title>
+            <para>Пользователь хочет подсветить Python-код. Он создает экземпляр класса <classname>SyntaxHighlighter</classname>, задает язык и вызывает метод подсветки.</para>
+            <programlisting language="python"><![CDATA[
+highlighter = SyntaxHighlighter("Python")
+result = highlighter.highlight("def hello(): print('Hello')")
+print(result)  # Вывод: Highlighted Python code: def hello(): print('Hello')
+            ]]></programlisting>
+        </section>
+
+        <section>
+            <title>Сценарий 2: Смена темы оформления</title>
+            <para>Пользователь переключает тему на темную для работы в ночное время.</para>
+            <programlisting language="python"><![CDATA[
+theme_manager = ThemeManager()
+print(theme_manager.get_theme())  # Вывод: Current theme: light
+theme_manager.set_theme("dark")
+print(theme_manager.get_theme())  # Вывод: Current theme: dark
+            ]]></programlisting>
+        </section>
+
+        <section>
+            <title>Сценарий 3: Смена языка подсветки</title>
+            <para>Пользователь меняет язык подсветки с Python на JavaScript.</para>
+            <programlisting language="python"><![CDATA[
+highlighter = SyntaxHighlighter("Python")
+print(highlighter.set_language("JavaScript"))  # Вывод: Language set to JavaScript
+result = highlighter.highlight("console.log('Hello');")
+print(result)  # Вывод: Highlighted JavaScript code: console.log('Hello');
+            ]]></programlisting>
         </section>
     </chapter>
 </book>
